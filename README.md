@@ -4,8 +4,6 @@ This repository includes the source code for my personal portfolio website. The 
 
 Developed as a digital representation of my academic background in **Electrical and Computer Engineering** and my professional experience in **Robotics** and **Network Management**.
 
-## Contents
-
 ## Core Files & Structure
 
 * **index.html**

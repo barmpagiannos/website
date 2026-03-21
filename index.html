@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="el" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Βασίλειος Μπαρμπαγιάννος</title>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231e3a8a'/%3E%3Ctext x='50' y='54' font-size='26' font-family='monospace, sans-serif' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'%3E%26lt%3BVB/%26gt%3B%3C/text%3E%3C/svg%3E">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="text-slate-800 antialiased selection:bg-primary selection:text-white">
+
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-end items-center h-16 gap-6">
+                <div class="hidden md:flex space-x-8 items-center text-sm font-medium">
+                    <a href="#about" class="text-slate-600 hover:text-primary transition-colors"><span class="lang-el">Σχετικά</span><span class="lang-en hidden">About</span></a>
+                    <a href="#experience" class="text-slate-600 hover:text-primary transition-colors"><span class="lang-el">Εμπειρία</span><span class="lang-en hidden">Experience</span></a>
+                    <a href="#education" class="text-slate-600 hover:text-primary transition-colors"><span class="lang-el">Εκπαίδευση</span><span class="lang-en hidden">Education</span></a>
+                    <a href="#skills" class="text-slate-600 hover:text-primary transition-colors"><span class="lang-el">Δεξιότητες</span><span class="lang-en hidden">Skills</span></a>
+                    <a href="#courses" class="text-slate-600 hover:text-primary transition-colors"><span class="lang-el">Πιστοποιήσεις</span><span class="lang-en hidden">Certifications</span></a>
+                </div>
+                <button class="lang-toggle-btn flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-1.5 rounded-full text-sm font-semibold transition-colors border border-slate-200">🇬🇧 English</button>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-primary"><i class="fas fa-bars text-2xl"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-2 pt-2 pb-3 space-y-1">
+            <a href="#about" class="block px-3 py-2 text-slate-600 hover:bg-slate-50 rounded-md text-base font-medium"><span class="lang-el">Σχετικά</span><span class="lang-en hidden">About</span></a>
+            <a href="#experience" class="block px-3 py-2 text-slate-600 hover:bg-slate-50 rounded-md text-base font-medium"><span class="lang-el">Εμπειρία</span><span class="lang-en hidden">Experience</span></a>
+            <a href="#education" class="block px-3 py-2 text-slate-600 hover:bg-slate-50 rounded-md text-base font-medium"><span class="lang-el">Εκπαίδευση</span><span class="lang-en hidden">Education</span></a>
+            <a href="#skills" class="block px-3 py-2 text-slate-600 hover:bg-slate-50 rounded-md text-base font-medium"><span class="lang-el">Δεξιότητες</span><span class="lang-en hidden">Skills</span></a>
+            <a href="#courses" class="block px-3 py-2 text-slate-600 hover:bg-slate-50 rounded-md text-base font-medium"><span class="lang-el">Πιστοποιήσεις</span><span class="lang-en hidden">Certifications</span></a>
+        </div>
+    </nav>
+
+    <section id="about" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-2xl border-4 border-white flex-shrink-0 bg-slate-200">
+                <img src="profile.jpg" alt="Profile" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/512?text=VB'">
+            </div>
+            <div class="text-center md:text-left flex-1">
+                <h1 class="text-4xl md:text-5xl font-bold text-dark mb-4">
+                    [cite_start]<span class="lang-el">Βασίλειος Μπαρμπαγιάννος</span> [cite: 1]
+                    [cite_start]<span class="lang-en hidden">Vasileios Barmpagiannos</span> [cite: 1]
+                </h1>
+                <h2 class="text-xl md:text-2xl text-secondary font-medium mb-6">
+                    [cite_start]<span class="lang-el">Προπτυχιακός Φοιτητής</span> [cite: 3]
+                    [cite_start]<span class="lang-en hidden">Undergraduate Student</span> [cite: 3]
+                </h2>
+                <p class="text-slate-600 leading-relaxed mb-8 max-w-2xl text-lg">
+                    [cite_start]<span class="lang-el">Ονομάζομαι Μπαρμπαγιάννος Βασίλειος και είμαι τελειόφοιτος φοιτητής του τμήματος Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών του ΑΠΘ[cite: 12]. [cite_start]Επέλεξα τον τομέα ηλεκτρονικής και υπολογιστών, καθώς ασχολούμαι και μου αρέσει ο προγραμματισμός και η ρομποτική[cite: 13]. [cite_start]Στα ενδιαφέροντά μου συγκαταλέγεται επίσης η ανάλυση δεδομένων και η μηχανική μάθηση[cite: 14].</span>
+                    [cite_start]<span class="lang-en hidden">My name is Vasileios Barmpagiannos and I am a final-year student at the Department of Electrical and Computer Engineering at the Aristotle University of Thessaloniki[cite: 12]. [cite_start]I chose to specialize in electronics and computers, as I am highly interested and involved in programming and robotics[cite: 13]. [cite_start]My interests also include data analysis and machine learning[cite: 14].</span>
+                </p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-8">
+                    [cite_start]<a href="mailto:vasilismparmp@hotmail.gr" class="flex items-center gap-2 text-slate-600 hover:text-primary transition-colors text-lg"><i class="fas fa-envelope"></i><span>vasilismparmp@hotmail.gr</span> [cite: 6]</a>
+                    [cite_start]<a href="tel:+306989040139" class="flex items-center gap-2 text-slate-600 hover:text-primary transition-colors text-lg"><i class="fas fa-phone"></i><span>+30 6989040139</span> [cite: 6]</a>
+                    [cite_start]<span class="flex items-center gap-2 text-slate-600 text-lg"><i class="fas fa-location-dot"></i><span class="lang-el">Θεσσαλονίκη, Ελλάδα</span> [cite: 5] [cite_start]<span class="lang-en hidden">Thessaloniki, Greece</span> [cite: 5]</span>
+                </div>
+                <div class="flex justify-center md:justify-start gap-4">
+                    <a href="https://linkedin.com/in/vasilis-barmpagiannos-446200220" target="_blank" class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 hover:-translate-y-1 transition-all duration-300"><i class="fab fa-linkedin-in text-xl"></i></a>
+                    <a href="https://github.com/barmpagiannos" target="_blank" class="bg-slate-800 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-black hover:-translate-y-1 transition-all duration-300"><i class="fab fa-github text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-slate-400 py-8 border-t border-slate-700 text-center">
+        <p class="text-sm">&copy; <span id="year"></span> <span class="lang-el">Βασίλειος Μπαρμπαγιάννος.</span><span class="lang-en hidden">Vasileios Barmpagiannos.</span></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

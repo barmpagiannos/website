@@ -1,8 +1,8 @@
-# 🔗 Vasileios Barmpagiannos | Personal Portfolio
+# Vasileios Barmpagiannos | Personal Portfolio
 
-[cite_start]This repository includes the source code for my personal portfolio website[cite: 1, 2]. The project features a **bilingual interface** (Greek/English), a **responsive design** optimized for all devices, and a **local development server** built with Python.
+This repository includes the source code for my personal portfolio website. The project features a **bilingual interface** (Greek/English), a **responsive design** optimized for all devices, and a **local development server** built with Python.
 
-[cite_start]Developed as a digital representation of my academic background in **Electrical and Computer Engineering** [cite: 12, 16] [cite_start]and my professional experience in **Robotics** and **Network Management**[cite: 19, 25].
+Developed as a digital representation of my academic background in **Electrical and Computer Engineering** and my professional experience in **Robotics** and **Network Management**.
 
 ---
 
@@ -46,9 +46,8 @@ To run this project on your local machine, follow these steps:
 
 ## Contact & Links
 
-* [cite_start]**LinkedIn:** [linkedin.com/in/vasilis-barmpagiannos-446200220](https://linkedin.com/in/vasilis-barmpagiannos-446200220) [cite: 10]
-* [cite_start]**Email:** [vasilismparmp@hotmail.gr](mailto:vasilismparmp@hotmail.gr) [cite: 6]
-* [cite_start]**GitHub Profile:** [github.com/barmpagiannos](https://github.com/barmpagiannos) [cite: 10]
+* **LinkedIn:** [linkedin.com/in/vasilis-barmpagiannos-446200220](https://linkedin.com/in/vasilis-barmpagiannos-446200220)
+* **Email:** [vasilismparmp@hotmail.gr](mailto:vasilismparmp@hotmail.gr)
+* **GitHub Profile:** [github.com/barmpagiannos](https://github.com/barmpagiannos)
 
 ---
-[cite_start]*Developed by Vasileios Barmpagiannos — August 2025* [cite: 54]

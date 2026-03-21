@@ -1,64 +1,47 @@
-Vasileios Barmpagiannos | Personal Portfolio 🚀
+Vasileios Barmpagiannos | Personal Portfolio
 
-Welcome to my personal portfolio website repository. This project is a bilingual (Greek/English) digital presentation of my resume, showcasing my skills, professional experience, and academic background as an ECE student.
+This repository includes the source code for my personal portfolio website. The project features a bilingual interface (Greek/English), a responsive design optimized for all devices, and a local development server built with Python.
 
-✨ Features
+Developed as a digital representation of my academic background in Electrical and Computer Engineering and my professional experience in Robotics and Network Management.
 
-Bilingual Support: Seamlessly switch between Greek and English with a single click.
+Contents
 
-Responsive Design: Fully optimized for all screen sizes (Mobile, Tablet, Desktop).
+Core Files & Structure
 
-Modern UI: Clean and professional interface built with Tailwind CSS and the Inter font family.
+index.html
+Defines the primary structure of the website, including the bilingual content blocks and the navigation system.
 
-Local Server: Includes a Python (Flask) script for easy local deployment and testing.
+style.css
+Contains custom styling, Tailwind CSS configurations, and the visual logic for the professional experience timeline.
 
-🛠️ Technologies Used
+script.js
+Handles the core interactivity, including the language switching logic (EL/EN), mobile menu toggling, and dynamic date updates.
 
-Frontend: HTML5, CSS3, JavaScript (Vanilla)
+app.py
+A lightweight Flask application used to serve the website on localhost:5000 for development and testing purposes.
 
-Frameworks: Tailwind CSS
+profile.jpg
+The profile photograph used in the "About" section of the portfolio.
 
-Backend (Local): Python, Flask
+Local Deployment
 
-Typography & Icons: Google Fonts (Inter), FontAwesome, and a Custom SVG Favicon
+To run this project on your local machine, follow these steps:
 
-📂 Project Structure
+Clone the repository
+git clone https://github.com/barmpagiannos/website.git
 
-website/
-├── app.py          # Localhost Flask server
-├── index.html      # Main website structure
-├── style.css       # Custom styling and timeline logic
-├── script.js       # Language toggling and UI interactions
-├── profile.jpg     # Profile photograph
-└── .gitignore      # Git exclusion rules
+Initialize the Server
+Ensure Python is installed, then run pip install flask followed by python app.py.
 
+Access the Site
+Open your browser and navigate to http://127.0.0.1:5000.
 
-🚀 How to Run Locally
+Contact & Links
 
-Clone the repository:
-
-git clone [https://github.com/barmpagiannos/website.git](https://github.com/barmpagiannos/website.git)
-
-
-Install Flask (if not already installed):
-
-pip install flask
-
-
-Start the local server:
-
-python app.py
-
-
-View in your browser:
-Navigate to http://127.0.0.1:5000
-
-👤 Contact Me
-
-LinkedIn: Vasilis Barmpagiannos
+LinkedIn: linkedin.com/in/vasilis-barmpagiannos-446200220
 
 Email: vasilismparmp@hotmail.gr
 
-GitHub: barmpagiannos
+GitHub Profile: github.com/barmpagiannos
 
-Made with ❤️ and Gemini 3.1 Pro
+Developed by Vasileios Barmpagiannos — August 2025

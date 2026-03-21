@@ -4,11 +4,7 @@ This repository includes the source code for my personal portfolio website. The 
 
 Developed as a digital representation of my academic background in **Electrical and Computer Engineering** and my professional experience in **Robotics** and **Network Management**.
 
-
-
 ## Contents
-
----
 
 ## Core Files & Structure
 
@@ -27,8 +23,6 @@ Developed as a digital representation of my academic background in **Electrical 
 * **profile.jpg**
   The profile photograph used in the "About" section of the portfolio.
 
----
-
 ## Local Deployment
 
 To run this project on your local machine, follow these steps:
@@ -42,12 +36,8 @@ To run this project on your local machine, follow these steps:
 3. **Access the Site**
    Open your browser and navigate to `http://127.0.0.1:5000`.
 
----
-
 ## Contact & Links
 
 * **LinkedIn:** [linkedin.com/in/vasilis-barmpagiannos-446200220](https://linkedin.com/in/vasilis-barmpagiannos-446200220)
 * **Email:** [vasilismparmp@hotmail.gr](mailto:vasilismparmp@hotmail.gr)
 * **GitHub Profile:** [github.com/barmpagiannos](https://github.com/barmpagiannos)
-
----

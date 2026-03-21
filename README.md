@@ -1,8 +1,8 @@
-Vasileios Barmpagiannos
+Vasileios Barmpagiannos | Personal Portfolio 🚀
 
 Welcome to my personal portfolio website repository. This project is a bilingual (Greek/English) digital presentation of my resume, showcasing my skills, professional experience, and academic background as an ECE student.
 
-Features
+✨ Features
 
 Bilingual Support: Seamlessly switch between Greek and English with a single click.
 
@@ -12,7 +12,7 @@ Modern UI: Clean and professional interface built with Tailwind CSS and the Inte
 
 Local Server: Includes a Python (Flask) script for easy local deployment and testing.
 
-Technologies Used
+🛠️ Technologies Used
 
 Frontend: HTML5, CSS3, JavaScript (Vanilla)
 
@@ -22,7 +22,7 @@ Backend (Local): Python, Flask
 
 Typography & Icons: Google Fonts (Inter), FontAwesome, and a Custom SVG Favicon
 
-Project Structure
+📂 Project Structure
 
 website/
 ├── app.py          # Localhost Flask server
@@ -33,7 +33,7 @@ website/
 └── .gitignore      # Git exclusion rules
 
 
-How to Run Locally
+🚀 How to Run Locally
 
 Clone the repository:
 
@@ -53,10 +53,12 @@ python app.py
 View in your browser:
 Navigate to http://127.0.0.1:5000
 
-Contact Me
+👤 Contact Me
 
 LinkedIn: Vasilis Barmpagiannos
 
 Email: vasilismparmp@hotmail.gr
 
 GitHub: barmpagiannos
+
+Made with ❤️ and Gemini 3.1 Pro

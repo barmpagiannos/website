@@ -3,47 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">Βασίλειος Μπαρμπαγιάννος</title>
+    <title id="page-title">Vasileios Barmpagiannos</title>
     
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231e3a8a'/%3E%3Ctext x='50' y='54' font-size='26' font-family='monospace, sans-serif' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'%3E%26lt%3BVB/%26gt%3B%3C/text%3E%3C/svg%3E">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1d4ed8', // blue-700
+                        secondary: '#3b82f6', // blue-500
+                        dark: '#1e293b', // slate-800
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .timeline-line {
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #e2e8f0; /* slate-200 */
+            z-index: 0;
+        }
+        @media (min-width: 768px) {
+            .timeline-line {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .timeline-item:nth-child(odd) .timeline-content {
+                padding-right: 3rem;
+                text-align: right;
+            }
+            .timeline-item:nth-child(even) .timeline-content {
+                padding-left: 3rem;
+            }
+            .timeline-item:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+        }
+        .timeline-dot {
+            z-index: 10;
+        }
+    </style>
 </head>
 <body class="text-slate-800 antialiased selection:bg-primary selection:text-white">
 
     <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50 transition-all duration-300">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-end items-center h-16 gap-6">
-                <div class="hidden md:flex space-x-8 items-center text-sm font-medium">
-                    <a href="#about" class="text-slate-600 hover:text-primary transition-colors"><span class="lang-el">Σχετικά</span><span class="lang-en hidden">About</span></a>
-                    <a href="#experience" class="text-slate-600 hover:text-primary transition-colors"><span class="lang-el">Εμπειρία</span><span class="lang-en hidden">Experience</span></a>
-                    <a href="#education" class="text-slate-600 hover:text-primary transition-colors"><span class="lang-el">Εκπαίδευση</span><span class="lang-en hidden">Education</span></a>
-                    <a href="#skills" class="text-slate-600 hover:text-primary transition-colors"><span class="lang-el">Δεξιότητες</span><span class="lang-en hidden">Skills</span></a>
-                    <a href="#courses" class="text-slate-600 hover:text-primary transition-colors"><span class="lang-el">Πιστοποιήσεις</span><span class="lang-en hidden">Certifications</span></a>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#about" class="text-slate-600 hover:text-primary transition-colors font-medium text-sm">
+                        <span class="lang-el">Σχετικά</span><span class="lang-en hidden">About</span>
+                    </a>
+                    <a href="#experience" class="text-slate-600 hover:text-primary transition-colors font-medium text-sm">
+                        <span class="lang-el">Εμπειρία</span><span class="lang-en hidden">Experience</span>
+                    </a>
+                    <a href="#education" class="text-slate-600 hover:text-primary transition-colors font-medium text-sm">
+                        <span class="lang-el">Εκπαίδευση</span><span class="lang-en hidden">Education</span>
+                    </a>
+                    <a href="#skills" class="text-slate-600 hover:text-primary transition-colors font-medium text-sm">
+                        <span class="lang-el">Δεξιότητες</span><span class="lang-en hidden">Skills</span>
+                    </a>
+                    <a href="#courses" class="text-slate-600 hover:text-primary transition-colors font-medium text-sm">
+                        <span class="lang-el">Πιστοποιήσεις</span><span class="lang-en hidden">Certifications</span>
+                    </a>
                 </div>
-                <button class="lang-toggle-btn flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-1.5 rounded-full text-sm font-semibold transition-colors border border-slate-200">🇬🇧 English</button>
+                
+                <button class="lang-toggle-btn flex items-center gap-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-1.5 rounded-full text-sm font-semibold transition-colors border border-slate-200">
+                    🇬🇧 English
+                </button>
+
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-primary"><i class="fas fa-bars text-2xl"></i></button>
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 px-2 pt-2 pb-3 space-y-1">
-            <a href="#about" class="block px-3 py-2 text-slate-600 hover:bg-slate-50 rounded-md text-base font-medium"><span class="lang-el">Σχετικά</span><span class="lang-en hidden">About</span></a>
-            <a href="#experience" class="block px-3 py-2 text-slate-600 hover:bg-slate-50 rounded-md text-base font-medium"><span class="lang-el">Εμπειρία</span><span class="lang-en hidden">Experience</span></a>
-            <a href="#education" class="block px-3 py-2 text-slate-600 hover:bg-slate-50 rounded-md text-base font-medium"><span class="lang-el">Εκπαίδευση</span><span class="lang-en hidden">Education</span></a>
-            <a href="#skills" class="block px-3 py-2 text-slate-600 hover:bg-slate-50 rounded-md text-base font-medium"><span class="lang-el">Δεξιότητες</span><span class="lang-en hidden">Skills</span></a>
-            <a href="#courses" class="block px-3 py-2 text-slate-600 hover:bg-slate-50 rounded-md text-base font-medium"><span class="lang-el">Πιστοποιήσεις</span><span class="lang-en hidden">Certifications</span></a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 text-slate-600 hover:bg-slate-50 hover:text-primary rounded-md text-base font-medium">
+                    <span class="lang-el">Σχετικά</span><span class="lang-en hidden">About</span>
+                </a>
+                <a href="#experience" class="block px-3 py-2 text-slate-600 hover:bg-slate-50 hover:text-primary rounded-md text-base font-medium">
+                    <span class="lang-el">Εμπειρία</span><span class="lang-en hidden">Experience</span>
+                </a>
+                <a href="#education" class="block px-3 py-2 text-slate-600 hover:bg-slate-50 hover:text-primary rounded-md text-base font-medium">
+                    <span class="lang-el">Εκπαίδευση</span><span class="lang-en hidden">Education</span>
+                </a>
+                <a href="#skills" class="block px-3 py-2 text-slate-600 hover:bg-slate-50 hover:text-primary rounded-md text-base font-medium">
+                    <span class="lang-el">Δεξιότητες</span><span class="lang-en hidden">Skills</span>
+                </a>
+                <a href="#courses" class="block px-3 py-2 text-slate-600 hover:bg-slate-50 hover:text-primary rounded-md text-base font-medium">
+                    <span class="lang-el">Πιστοποιήσεις</span><span class="lang-en hidden">Certifications</span>
+                </a>
+            </div>
         </div>
     </nav>
 
     <section id="about" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
         <div class="flex flex-col md:flex-row items-center gap-12">
             <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-2xl border-4 border-white flex-shrink-0 bg-slate-200">
-                <img src="profile.jpg" alt="Profile" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/512?text=VB'">
+                <img src="profile.jpg"
+                     alt="Profile Picture" 
+                     class="w-full h-full object-cover"
+                     onerror="this.src='https://via.placeholder.com/512?text=VB'">
             </div>
+            
             <div class="text-center md:text-left flex-1">
                 <h1 class="text-4xl md:text-5xl font-bold text-dark mb-4">
                     <span class="lang-el">Βασίλειος Μπαρμπαγιάννος</span>
@@ -53,27 +135,342 @@
                     <span class="lang-el">Προπτυχιακός Φοιτητής</span>
                     <span class="lang-en hidden">Undergraduate Student</span>
                 </h2>
-                <p class="text-slate-600 leading-relaxed mb-8 max-w-2xl text-lg">
-                    <span class="lang-el">Ονομάζομαι Μπαρμπαγιάννος Βασίλειος και είμαι τελειόφοιτος φοιτητής του τμήματος Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών του ΑΠΘ. Επέλεξα τον τομέα ηλεκτρονικής και υπολογιστών, καθώς ασχολούμαι και μου αρέσει ο προγραμματισμός και η ρομποτική. Στα ενδιαφέροντά μου συγκαταλέγεται επίσης η ανάλυση δεδομένων και η μηχανική μάθηση.</span>
-                    <span class="lang-en hidden">My name is Vasileios Barmpagiannos and I am a final-year student at the Department of Electrical and Computer Engineering at the Aristotle University of Thessaloniki. I chose to specialize in electronics and computers, as I am highly interested and involved in programming and robotics. My interests also include data analysis and machine learning.</span>
+                
+                <p class="text-slate-600 leading-relaxed mb-8 max-w-2xl">
+                    <span class="lang-el">
+                        Ονομάζομαι Μπαρμπαγιάννος Βασίλειος και είμαι τελειόφοιτος φοιτητής του τμήματος Ηλεκτρολόγων 
+                        Μηχανικών και Μηχανικών Υπολογιστών του ΑΠΘ. Επέλεξα τον τομέα ηλεκτρονικής και υπολογιστών, καθώς 
+                        ασχολούμαι και μου αρέσει ο προγραμματισμός και η ρομποτική. Στα ενδιαφέροντά μου συγκαταλέγεται επίσης 
+                        η ανάλυση δεδομένων και η μηχανική μάθηση.
+                    </span>
+                    <span class="lang-en hidden">
+                        My name is Vasileios Barmpagiannos and I am a final-year student at the Department of Electrical and Computer Engineering at the Aristotle University of Thessaloniki. I chose to specialize in electronics and computers, as I am highly interested and involved in programming and robotics. My interests also include data analysis and machine learning.
+                    </span>
                 </p>
+
                 <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-8">
-                    <a href="mailto:vasilismparmp@hotmail.gr" class="flex items-center gap-2 text-slate-600 hover:text-primary transition-colors text-lg"><i class="fas fa-envelope"></i><span>vasilismparmp@hotmail.gr</span></a>
-                    <a href="tel:+306989040139" class="flex items-center gap-2 text-slate-600 hover:text-primary transition-colors text-lg"><i class="fas fa-phone"></i><span>+30 6989040139</span></a>
-                    <span class="flex items-center gap-2 text-slate-600 text-lg"><i class="fas fa-location-dot"></i><span class="lang-el">Θεσσαλονίκη, Ελλάδα</span> <span class="lang-en hidden">Thessaloniki, Greece</span></span>
+                    <a href="mailto:vasilismparmp@hotmail.gr" class="flex items-center gap-2 text-slate-600 hover:text-primary transition-colors">
+                        <i class="fas fa-envelope text-lg"></i>
+                        <span>vasilismparmp@hotmail.gr</span>
+                    </a>
+                    <a href="tel:+306989040139" class="flex items-center gap-2 text-slate-600 hover:text-primary transition-colors">
+                        <i class="fas fa-phone text-lg"></i>
+                        <span>+30 6989040139</span>
+                    </a>
+                    <span class="flex items-center gap-2 text-slate-600">
+                        <i class="fas fa-location-dot text-lg"></i>
+                        <span class="lang-el">Θεσσαλονίκη, Ελλάδα</span><span class="lang-en hidden">Thessaloniki, Greece</span>
+                    </span>
                 </div>
+
                 <div class="flex justify-center md:justify-start gap-4">
-                    <a href="https://linkedin.com/in/vasilis-barmpagiannos-446200220" target="_blank" class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 hover:-translate-y-1 transition-all duration-300"><i class="fab fa-linkedin-in text-xl"></i></a>
-                    <a href="https://github.com/barmpagiannos" target="_blank" class="bg-slate-800 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-black hover:-translate-y-1 transition-all duration-300"><i class="fab fa-github text-xl"></i></a>
+                    <a href="https://linkedin.com/in/vasilis-barmpagiannos-446200220" target="_blank" rel="noopener noreferrer" class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-blue-700 hover:-translate-y-1 transition-all duration-300">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="https://github.com/barmpagiannos" target="_blank" rel="noopener noreferrer" class="bg-slate-800 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-black hover:-translate-y-1 transition-all duration-300">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-dark text-slate-400 py-8 border-t border-slate-700 text-center">
-        <p class="text-sm">&copy; <span id="year"></span> <span class="lang-el">Βασίλειος Μπαρμπαγιάννος.</span><span class="lang-en hidden">Vasileios Barmpagiannos.</span></p>
+    <section id="experience" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-dark mb-12 relative pb-4">
+                <span class="lang-el">Επαγγελματική Εμπειρία</span>
+                <span class="lang-en hidden">Professional Experience</span>
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-secondary rounded"></span>
+            </h2>
+
+            <div class="relative">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-item flex flex-col md:flex-row items-center w-full mb-12 relative z-10">
+                    <div class="w-full md:w-1/2 flex justify-start md:justify-end pl-12 md:pl-0">
+                        <div class="timeline-content bg-slate-50 p-6 rounded-xl shadow-md w-full hover:shadow-lg transition-shadow border border-slate-100">
+                            <h3 class="text-xl font-bold text-dark">
+                                <span class="lang-el">Μηχανικός Ρομποτικής</span><span class="lang-en hidden">Robotics Engineer</span>
+                                <span class="text-sm font-normal text-slate-500 block md:inline">
+                                    <span class="lang-el">(Πρακτική Άσκηση)</span><span class="lang-en hidden">(Internship)</span>
+                                </span>
+                            </h3>
+                            <div class="text-primary font-medium mb-2">
+                                <span class="lang-el">ΙΜΕΤ / ΕΚΕΤΑ, Θεσσαλονίκη</span><span class="lang-en hidden">HIT / CERTH, Thessaloniki</span>
+                            </div>
+                            <div class="text-slate-500 text-sm mb-4"><i class="far fa-calendar-alt mr-2"></i>
+                                <span class="lang-el">Ιούλιος 2025 - Σεπτέμβριος 2025</span><span class="lang-en hidden">July 2025 - September 2025</span>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                <span class="lang-el">Τρίμηνη πρακτική άσκηση στο Ινστιτούτο Βιώσιμης Κινητικότητας και Δικτύων Μεταφορών (ΙΜΕΤ) του Εθνικού Κέντρου Έρευνας και Τεχνολογικής Ανάπτυξης (ΕΚΕΤΑ). Ενασχόληση με το ρομπότ Spot της Boston Dynamics. Προγραμματισμός αυτόνομης πλοήγησης και λειτουργίας. Εργασία με αισθητήρες, κάμερες και κινητήρες. Χαρτογράφηση περιβάλλοντος και 3D οπτικοποίηση.</span>
+                                <span class="lang-en hidden">Three-month internship at the Hellenic Institute of Transport (HIT) of the Centre for Research and Technology Hellas (CERTH). Involvement with the Spot robot by Boston Dynamics. Programming autonomous navigation and operation. Working with sensors, cameras, and motors. Environment mapping and 3D visualization.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-primary border-4 border-white rounded-full timeline-dot shadow-md"></div>
+                </div>
+
+                <div class="timeline-item flex flex-col md:flex-row items-center w-full relative z-10">
+                    <div class="w-full md:w-1/2 flex justify-start pl-12 md:pl-0">
+                        <div class="timeline-content bg-slate-50 p-6 rounded-xl shadow-md w-full hover:shadow-lg transition-shadow border border-slate-100">
+                            <h3 class="text-xl font-bold text-dark">
+                                <span class="lang-el">Ασκούμενος Τεχνικός Δικτύων</span><span class="lang-en hidden">Trainee Network Technician</span>
+                            </h3>
+                            <div class="text-primary font-medium mb-2">
+                                <span class="lang-el">Κέντρο Ηλεκτρονικής Διακυβέρνησης (ΚΗΔ) ΑΠΘ</span><span class="lang-en hidden">IT Center AUTH, Thessaloniki</span>
+                            </div>
+                            <div class="text-slate-500 text-sm mb-4"><i class="far fa-calendar-alt mr-2"></i>
+                                <span class="lang-el">Νοέμβριος 2023 - Ιανουάριος 2024</span><span class="lang-en hidden">November 2023 - January 2024</span>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed">
+                                <span class="lang-el">Τρίμηνη φοιτητική πρακτική άσκηση στο τμήμα Διαχείρισης Δικτύων του ΚΗΔ του Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης.</span>
+                                <span class="lang-en hidden">Three-month student internship at the Networks Management department of the IT Center at Aristotle University of Thessaloniki.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 bg-primary border-4 border-white rounded-full timeline-dot shadow-md"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-20 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-dark mb-12 relative pb-4">
+                <span class="lang-el">Εκπαίδευση</span><span class="lang-en hidden">Education</span>
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-secondary rounded"></span>
+            </h2>
+
+            <div class="space-y-8">
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-6 items-start">
+                    <div>
+                        <h3 class="text-xl font-bold text-dark">
+                            <span class="lang-el">Τμήμα Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών</span><span class="lang-en hidden">Department of Electrical and Computer Engineering</span>
+                        </h3>
+                        <p class="text-lg text-primary font-medium mt-1">
+                            <span class="lang-el">Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης (ΑΠΘ)</span><span class="lang-en hidden">Aristotle University of Thessaloniki (AUTH)</span>
+                        </p>
+                        <p class="text-slate-500 mt-2"><i class="far fa-calendar-alt mr-2"></i>
+                            <span class="lang-el">Οκτώβριος 2021 - Σήμερα</span><span class="lang-en hidden">October 2021 - Present</span>
+                        </p>
+                        <p class="text-slate-600 mt-3">
+                            <span class="lang-el">Κατεύθυνση: Ηλεκτρονικής και Υπολογιστών.</span><span class="lang-en hidden">Specialization: Electronics and Computers.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row gap-6 items-start">
+                    <div>
+                        <h3 class="text-xl font-bold text-dark">
+                            <span class="lang-el">Γενικό Λύκειο Μελίκης</span><span class="lang-en hidden">General High School of Meliki</span>
+                        </h3>
+                        <p class="text-lg text-slate-600 font-medium mt-1">
+                            <span class="lang-el">Μελίκη, Ημαθία</span><span class="lang-en hidden">Meliki, Imathia</span>
+                        </p>
+                        <p class="text-slate-500 mt-2"><i class="far fa-calendar-alt mr-2"></i>
+                            <span class="lang-el">Σεπτέμβριος 2018 - Ιούνιος 2021</span><span class="lang-en hidden">September 2018 - June 2021</span>
+                        </p>
+                        <p class="text-slate-600 mt-3">
+                            <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
+                                <span class="lang-el">Βαθμός Απολυτηρίου: 20</span><span class="lang-en hidden">Graduation Grade: 20</span>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-dark mb-12 relative pb-4">
+                <span class="lang-el">Δεξιότητες</span><span class="lang-en hidden">Skills</span>
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-secondary rounded"></span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-slate-50 p-6 rounded-xl shadow-sm border border-slate-100">
+                    <h3 class="text-lg font-bold text-dark mb-4">
+                        <span class="lang-el">Γλώσσες Προγραμματισμού</span><span class="lang-en hidden">Programming Languages</span>
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-white border border-slate-200 text-slate-700 px-4 py-2 rounded-lg text-sm font-medium hover:border-primary hover:text-primary transition-colors cursor-default">C</span>
+                        <span class="bg-white border border-slate-200 text-slate-700 px-4 py-2 rounded-lg text-sm font-medium hover:border-primary hover:text-primary transition-colors cursor-default">C++</span>
+                        <span class="bg-white border border-slate-200 text-slate-700 px-4 py-2 rounded-lg text-sm font-medium hover:border-primary hover:text-primary transition-colors cursor-default">Python</span>
+                        <span class="bg-white border border-slate-200 text-slate-700 px-4 py-2 rounded-lg text-sm font-medium hover:border-primary hover:text-primary transition-colors cursor-default">Java</span>
+                        <span class="bg-white border border-slate-200 text-slate-700 px-4 py-2 rounded-lg text-sm font-medium hover:border-primary hover:text-primary transition-colors cursor-default">SQL</span>
+                        <span class="bg-white border border-slate-200 text-slate-700 px-4 py-2 rounded-lg text-sm font-medium hover:border-primary hover:text-primary transition-colors cursor-default">Matlab</span>
+                        <span class="bg-white border border-slate-200 text-slate-700 px-4 py-2 rounded-lg text-sm font-medium hover:border-primary hover:text-primary transition-colors cursor-default">Verilog</span>
+                        <span class="bg-white border border-slate-200 text-slate-700 px-4 py-2 rounded-lg text-sm font-medium hover:border-primary hover:text-primary transition-colors cursor-default">Arduino</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-xl shadow-sm border border-slate-100">
+                    <h3 class="text-lg font-bold text-dark mb-4">
+                        <span class="lang-el">Άλλες Δεξιότητες</span><span class="lang-en hidden">Other Skills</span>
+                    </h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-sm font-semibold text-slate-500 mb-2 uppercase tracking-wider">
+                                <span class="lang-el">Γλώσσες</span><span class="lang-en hidden">Languages</span>
+                            </p>
+                            <div class="flex gap-2">
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-md text-sm font-medium">
+                                    <span class="lang-el">Ελληνικά (Μητρική)</span><span class="lang-en hidden">Greek (Native)</span>
+                                </span>
+                                <span class="bg-blue-50 text-blue-700 px-3 py-1 rounded-md text-sm font-medium">
+                                    <span class="lang-el">Αγγλικά</span><span class="lang-en hidden">English</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-slate-500 mb-2 uppercase tracking-wider">Soft Skills</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-md text-sm font-medium">
+                                    <span class="lang-el">Επικοινωνία</span><span class="lang-en hidden">Communication</span>
+                                </span>
+                                <span class="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-md text-sm font-medium">
+                                    <span class="lang-el">Ομαδικότητα</span><span class="lang-en hidden">Teamwork</span>
+                                </span>
+                                <span class="bg-indigo-50 text-indigo-700 px-3 py-1 rounded-md text-sm font-medium">
+                                    <span class="lang-el">Κοινωνικότητα</span><span class="lang-en hidden">Sociability</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-dark rounded-2xl p-8 text-center text-white relative overflow-hidden">
+                <div class="absolute -right-10 -top-10 opacity-10">
+                    <i class="fab fa-github text-9xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4 relative z-10">
+                    <span class="lang-el">Προσωπικά Projects</span><span class="lang-en hidden">Personal Projects</span>
+                </h3>
+                <p class="text-slate-300 mb-6 max-w-2xl mx-auto relative z-10">
+                    <span class="lang-el">Πλήθος έργων τα οποία υλοποιήθηκαν στο πλαίσιο του προγράμματος σπουδών του τμήματός μου ή για τα προσωπικά μου ενδιαφέροντα.<br>Περισσότερα στη σελίδα μου στο Github.</span>
+                    <span class="lang-en hidden">A variety of projects developed as part of my academic curriculum or driven by my personal interests.<br>More details are available on my GitHub page.</span>
+                </p>
+                <a href="https://github.com/barmpagiannos" target="_blank" rel="noopener noreferrer" class="inline-block bg-white text-dark font-semibold py-3 px-8 rounded-full hover:bg-slate-100 transition-colors shadow-lg relative z-10">
+                    <i class="fab fa-github mr-2"></i> 
+                    <span class="lang-el">Επίσκεψη στο GitHub</span><span class="lang-en hidden">Visit GitHub</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="py-20 bg-slate-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-dark mb-12 relative pb-4">
+                <span class="lang-el">Σεμινάρια & Πιστοποιήσεις</span><span class="lang-en hidden">Seminars & Certifications</span>
+                <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 h-1 bg-secondary rounded"></span>
+            </h2>
+
+            <div class="grid gap-6">
+                <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-4 gap-2">
+                        <h3 class="text-lg font-bold text-dark">BLS - Basic Life Support</h3>
+                        <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap"><i class="far fa-calendar-alt mr-1"></i> 
+                            <span class="lang-el">Μάρτιος 2025</span><span class="lang-en hidden">March 2025</span>
+                        </span>
+                    </div>
+                    <p class="text-slate-600 text-sm">
+                        <span class="lang-el">Πιστοποίηση στη βασική υποστήριξη ζωής από το European Resuscitation Council: Καρδιοαναπνευστική αναζωογόνηση ενηλίκου, αποβολή ξένου σώματος, χρήση αυτόματου εξωτερικού απινιδωτή.</span>
+                        <span class="lang-en hidden">Certification in Basic Life Support (BLS) by the European Resuscitation Council: Adult cardiopulmonary resuscitation (CPR), foreign body airway obstruction management, and use of an automated external defibrillator (AED).</span>
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-4 gap-2">
+                        <h3 class="text-lg font-bold text-dark">Arduino Workshop</h3>
+                        <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap"><i class="far fa-calendar-alt mr-1"></i> 
+                            <span class="lang-el">Μάιος 2022</span><span class="lang-en hidden">May 2022</span>
+                        </span>
+                    </div>
+                    <p class="text-slate-600 text-sm">
+                        <span class="lang-el">Εφαρμογές του Arduino στην βιοϊατρική από τις φοιτητικές ομάδες EMB και IEEE.</span>
+                        <span class="lang-en hidden">Arduino application to Biomedical engineering by student groups EMB and IEEE.</span>
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-4 gap-2">
+                        <h3 class="text-lg font-bold text-dark">Soft Skills Academy Thessaloniki</h3>
+                        <span class="bg-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap"><i class="far fa-calendar-alt mr-1"></i> 
+                            <span class="lang-el">Νοέμβριος 2022</span><span class="lang-en hidden">November 2022</span>
+                        </span>
+                    </div>
+                    <p class="text-slate-600 text-sm">
+                        <span class="lang-el">Σεμινάριο για την διαχείριση άγχους/παραγωγικότητα-motivation από την Eestech LC Thessaloniki.</span>
+                        <span class="lang-en hidden">Seminar about stress management/productivity-motivation from Eestech LC Thessaloniki.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-slate-300 py-8 border-t border-slate-700">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-sm">
+                &copy; <span id="year"></span> 
+                <span class="lang-el">Βασίλειος Μπαρμπαγιάννος. Με επιφύλαξη παντός δικαιώματος.</span>
+                <span class="lang-en hidden">Vasileios Barmpagiannos. All rights reserved.</span>
+            </p>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Set Current Year
+        document.getElementById('year').textContent = new Date().getFullYear() > 2025 ? new Date().getFullYear() : 2025;
+
+        // Mobile Menu Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Language Toggle Logic
+        let isEnglish = false;
+        
+        function toggleLanguage() {
+            isEnglish = !isEnglish;
+            
+            // Toggle visibility classes for text
+            document.querySelectorAll('.lang-el').forEach(el => {
+                el.classList.toggle('hidden', isEnglish);
+            });
+            document.querySelectorAll('.lang-en').forEach(el => {
+                el.classList.toggle('hidden', !isEnglish);
+            });
+
+            // Update buttons text & flag
+            document.querySelectorAll('.lang-toggle-btn').forEach(button => {
+                if (isEnglish) {
+                    button.innerHTML = '🇬🇷 Greek';
+                } else {
+                    button.innerHTML = '🇬🇧 English';
+                }
+            });
+
+            // Update Document Language and Title dynamically
+            document.documentElement.lang = isEnglish ? 'en' : 'el';
+            document.getElementById('page-title').textContent = isEnglish ? 'Vasileios Barmpagiannos | Personal Website' : 'Βασίλειος Μπαρμπαγιάννος | Προσωπικό Website';
+        }
+
+        // Add event listeners to all language toggle buttons
+        document.querySelectorAll('.lang-toggle-btn').forEach(btn => {
+            btn.addEventListener('click', toggleLanguage);
+        });
+    </script>
 </body>
 </html>
